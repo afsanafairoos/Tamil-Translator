@@ -1,0 +1,5 @@
+deep-translator
+pyperclip
+pyautogui
+keyboard
+tk
