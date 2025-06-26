@@ -59,7 +59,7 @@ def launch_app_window(get_last_n_history_func, show_history_func, quit_callback)
     root.configure(bg=PINK_BG)
     root.attributes('-topmost', True)
 
-    label = tk.Label(root, text="🌸 Tamil Translator is Running", font=("Arial", 12), bg=PINK_BG)
+    label = tk.Label(root, text=" Tamil Translator is Running", font=("Arial", 12), bg=PINK_BG)
     label.pack(pady=10)
 
     history_box = tk.Text(root, height=10, font=("Arial", 9), wrap="word", bg=PINK_LIGHT)
