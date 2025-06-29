@@ -52,30 +52,3 @@ def show_history_window(load_history_func):
     clear_btn.pack(pady=5)
     win.mainloop()
 
-def launch_app_window(get_last_n_history_func, show_history_func, quit_callback):
-    root = tk.Tk()
-    root.title("Tamil Translator App")
-    root.geometry("400x300")
-    root.configure(bg=PINK_BG)
-    root.attributes('-topmost', True)
-
-    label = tk.Label(root, text=" Tamil Translator is Running", font=("Arial", 12), bg=PINK_BG)
-    label.pack(pady=10)
-
-    history_box = tk.Text(root, height=10, font=("Arial", 9), wrap="word", bg=PINK_LIGHT)
-    last_history = get_last_n_history_func(5)
-    for row in last_history:
-        if len(row) != 2:
-            continue
-        original, translated = row
-        history_box.insert(tk.END, f"EN: {original}\nTA: {translated}\n{'-'*50}\n")
-    history_box.config(state='disabled')
-    history_box.pack(padx=10, pady=5, fill="both", expand=True)
-
-    history_btn = tk.Button(root, text="View Full History", command=show_history_func, bg=BUTTON_PINK)
-    history_btn.pack(pady=5)
-
-    quit_btn = tk.Button(root, text="Quit", command=quit_callback, bg=BUTTON_PINK_DARK)
-    quit_btn.pack(pady=5)
-
-    return root
