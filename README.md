@@ -7,7 +7,7 @@ A simple Python desktop app to auto-translate selected English text to Tamil wit
 ![App Screenshot](Tamil_Translator.png)
 
 - Auto-detects selected English text on screen every 1.5 seconds
-- Shows Tamil translation popup (pink-themed UI)
+- Shows Tamil translation popup
 - Keeps translation history in CSV files, rotating after 500 entries
 - View full translation history in GUI
 - Hotkeys: Alt + H to open history window
