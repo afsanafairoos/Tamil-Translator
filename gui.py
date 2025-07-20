@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 import pyautogui
+import os
 
 PINK_BG = "#ffe6f0"
 PINK_LIGHT = "#fff0f5"
@@ -42,13 +43,12 @@ def show_history_window(load_history_func):
     def confirm_and_clear():
         if messagebox.askyesno("Confirm", "Do you really want to delete all history?"):
             from translator import get_history_files
-            import os
             for f in get_history_files():
-                os.remove(f)
+                if os.path.exists(f):
+                    os.remove(f)
             messagebox.showinfo("Deleted", "All history deleted successfully.")
             win.destroy()
 
     clear_btn = tk.Button(win, text="Clear All History", command=confirm_and_clear, bg=BUTTON_PINK)
     clear_btn.pack(pady=5)
     win.mainloop()
-

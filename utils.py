@@ -3,6 +3,7 @@ import pyautogui
 import time
 
 def get_selected_text():
+    """Get the currently selected text by copying it to clipboard."""
     original_clipboard = pyperclip.paste()
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.3)
@@ -11,6 +12,7 @@ def get_selected_text():
     return selected.strip()
 
 def is_valid_selection(text):
+    """Check if the selected text is valid for translation."""
     cleaned = text.strip()
     return (
         cleaned != "" and
